@@ -40,5 +40,16 @@ seleniumArgs:{
     seleniumArgs:['-port','9999']
 },
 
+# ChromeDriver Setup
+1. npm install wdio-chromedriver-service --save-dev
+2. npm install chromedriver --save-dev
+3. In wdio file , in services change services: ['selenium-standalone'] for services: ['chromedriver'],
+4. Remove:
+ port: 9999,
+    seleniumArgs:{
+    seleniumArgs:['-port','9999']
+5. Uncomment the path
+
+
 
 
