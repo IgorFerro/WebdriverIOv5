@@ -32,3 +32,13 @@ WebdriverIO v5, Selenium WebDriver, JavaScript, Chai &amp; More!
 2. ./node_modules/.bin/selenium-standalone start
 3. add ./node_modules/.bin/selenium-standalone start in json scripts
 
+# Altering Selenium Server Port Number
+1. In wdio file in services change for:
+services: ['selenium-standalone'],
+port: 9999,
+seleniumArgs:{
+    seleniumArgs:['-port','9999']
+},
+
+
+
