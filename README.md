@@ -27,3 +27,8 @@ WebdriverIO v5, Selenium WebDriver, JavaScript, Chai &amp; More!
 },
 4. Setup mocha Options add line: compilers: ['js:@babel/register']  
 
+# Install Seleniun Standalone
+1. ./node_modules/.bin/selenium-standalone install 
+2. ./node_modules/.bin/selenium-standalone start
+3. add ./node_modules/.bin/selenium-standalone start in json scripts
+
