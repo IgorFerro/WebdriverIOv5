@@ -19,3 +19,11 @@ WebdriverIO v5, Selenium WebDriver, JavaScript, Chai &amp; More!
 - @wdio/sync
 - chromedriver
 
+# Config Babel
+1. npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/register
+2. Create file babel.config.js
+3. Setup babel on wdio file in: before: function() {
+    require('@babel/register')
+},
+4. Setup mocha Options add line: compilers: ['js:@babel/register']  
+
