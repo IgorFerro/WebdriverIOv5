@@ -164,7 +164,8 @@ exports.config = {
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
        before: function (capabilities, specs) {
-          require('@babel/register')
+          require('@babel/register'),
+          expect = require('chai').expect;
           },
     /**
      * Runs before a WebdriverIO command gets executed.

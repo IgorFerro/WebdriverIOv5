@@ -50,6 +50,10 @@ seleniumArgs:{
     seleniumArgs:['-port','9999']
 5. Uncomment the path
 
+# Install Chai
+1. npm i --save-dev chai@latest
+2. Add require on before function in wdio: expect = require('chai').expect
+
 
 
 
