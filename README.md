@@ -54,6 +54,12 @@ seleniumArgs:{
 1. npm i --save-dev chai@latest
 2. Add require on before function in wdio: expect = require('chai').expect
 
+# Commands for Run Suites
+1. npm test -- --suite contactus
+2. npm test -- --suite regression
+3. Chabge the max instances for alter the number of pages opens on same time
+4. Uncomment specFileRetries: 1, on wdio file for re run your tests if it fails
+
 
 
 
