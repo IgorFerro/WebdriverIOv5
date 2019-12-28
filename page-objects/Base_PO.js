@@ -1,5 +1,6 @@
 export default class Base_Po {
    open(path){
+       browser.fullscreenWindow();
        browser.url(path);
    }
 
