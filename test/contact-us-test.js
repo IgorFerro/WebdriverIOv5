@@ -15,22 +15,33 @@ describe("Test contact us page on webdriver uni", () => {
     });
 
     it("Submit all information via the contact us page", () => {
-         const contactUsButton = $('//h1[text()="CONTACT US"]/..');   
-         contactUsButton.click();
+         //const contactUsButton = $('//h1[text()="CONTACT US"]/..');   
+         //contactUsButton.click();
+
+         browser.waitAndClick('//h1[text()="CONTACT US"]/..');
          
          browser.switchWindow('WebDriver | Contact Us');
 
-         const firstName = $('//*[@name="first_name"]');
-         const lastName = $('//*[@name="last_name"]');
-         const emailAddress = $('//*[@name="email"]');
-         const message = $('//*[@name="message"]');
-         const subimitButton = $('//*[@value="SUBMIT"]');
 
-         firstName.setValue(config.firstName);
-         lastName.setValue(config.lastName);
-         emailAddress.setValue('test@test.com');
-         message.setValue('hello');
-         subimitButton.click();
+        //const firstName = $('//*[@name="first_name"]');
+        //const lastName = $('//*[@name="last_name"]');
+        //const emailAddress = $('//*[@name="email"]');
+        //const message = $('//*[@name="message"]');
+        //const subimitButton = $('//*[@value="SUBMIT"]');
+
+         //firstName.setValue(config.firstName);
+         //lastName.setValue(config.lastName);
+         //emailAddress.setValue('test@test.com');
+         //message.setValue('hello');
+        // subimitButton.click();
+
+         browser.waitAndSendkeys('//*[@name="first_name"]',config.firstName);
+         browser.waitAndSendkeys('//*[@name="last_name"]',config.lastName);
+         browser.waitAndSendkeys('//*[@name="email"]','test@test.com');
+         browser.waitAndSendkeys('//*[@name="message"]','Hello');
+
+         browser.waitAndClick('//*[@value="SUBMIT"]');
+
 
          const contactUsSubmissionDetails = browser.getUrlAndTitle();
          expect(contactUsSubmissionDetails.url).to.contain('contact-form-thank-you');
