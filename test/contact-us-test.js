@@ -1,3 +1,6 @@
+var config = require('../config/main-config')
+
+
 describe("Test contact us page on webdriver uni", () => {
     beforeEach(function() {
       //browser.setWindowSize(1800,1200)
@@ -17,8 +20,8 @@ describe("Test contact us page on webdriver uni", () => {
          
          browser.switchWindow('WebDriver | Contact Us');
 
-         const firstName = $('//*[@name="first_name"]');
-         const lastName = $('//*[@name="last_name"]');
+         const firstName = $(config.firstName);
+         const lastName = $(config.baseUrl);
          const emailAddress = $('//*[@name="email"]');
          const message = $('//*[@name="message"]');
          const subimitButton = $('//*[@value="SUBMIT"]');
