@@ -175,7 +175,15 @@ exports.config = {
                 title: this.getTitle()
             }
         })
-
+         
+        browser.addCommand('waitAndClick', function (selector) {
+          try{
+              $(selector).waitForExist();
+              $(selector).click();
+          }catch(error){
+              throw new error('Could not click on selector:' + $(selector));
+          }
+        })
 
 
 
