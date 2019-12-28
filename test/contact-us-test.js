@@ -20,14 +20,14 @@ describe("Test contact us page on webdriver uni", () => {
          
          browser.switchWindow('WebDriver | Contact Us');
 
-         const firstName = $(config.firstName);
-         const lastName = $(config.baseUrl);
+         const firstName = $('//*[@name="first_name"]');
+         const lastName = $('//*[@name="last_name"]');
          const emailAddress = $('//*[@name="email"]');
          const message = $('//*[@name="message"]');
          const subimitButton = $('//*[@value="SUBMIT"]');
 
-         firstName.setValue('Igor');
-         lastName.setValue('Ferro');
+         firstName.setValue(config.firstName);
+         lastName.setValue(config.lastName);
          emailAddress.setValue('test@test.com');
          message.setValue('hello');
          subimitButton.click();
