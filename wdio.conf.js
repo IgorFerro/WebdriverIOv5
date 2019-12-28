@@ -185,10 +185,14 @@ exports.config = {
           }
         })
 
-
-
-
-
+        browser.addCommand('waitAndSendkeys', function (selector,keys) {
+            try{
+                $(selector).waitForExist();
+                $(selector).setValue(keys);
+            }catch(error){
+                throw new error('Could not send Key:'+ $(keys) + ', using selector:' + $(selector));
+            }
+          })
 
           },
     /**
