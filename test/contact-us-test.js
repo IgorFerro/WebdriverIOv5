@@ -1,4 +1,5 @@
 var config = require('../config/main-config')
+var dataGenerators = require('../utils/dataGenerator')
 
 
 describe("Test contact us page on webdriver uni", () => {
@@ -37,8 +38,8 @@ describe("Test contact us page on webdriver uni", () => {
 
          browser.waitAndSendkeys('//*[@name="first_name"]',config.firstName);
          browser.waitAndSendkeys('//*[@name="last_name"]',config.lastName);
-         browser.waitAndSendkeys('//*[@name="email"]','test@test.com');
-         browser.waitAndSendkeys('//*[@name="message"]','Hello');
+         browser.waitAndSendkeys('//*[@name="email"]',dataGenerators.generateRandomEmailAddress());
+         browser.waitAndSendkeys('//*[@name="message"]',dataGenerators.generateRandomString());
 
          browser.waitAndClick('//*[@value="SUBMIT"]');
 
